@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio Web",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass -w src/styles/sass/styles.scss:src/styles/css/styles.css"
+  },
+  "keywords": [],
+  "author": "Ivan Valdez",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.38.0"
+  }
+}

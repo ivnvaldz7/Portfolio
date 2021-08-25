@@ -1,0 +1,100 @@
+.proyects {
+  width: 90%;
+  margin-top: $mt;
+  background-color: $pink;
+  &_title {
+    font-size: 18vw;
+    display: inline-block;
+    margin: -11.5rem 0;
+  }
+  &_text {
+    text-align: center;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5rem;
+    &--title {
+      // @include title;
+      padding-bottom: 5rem;
+      color: $black;
+      line-height: 30px;
+      font-size: 30px;
+    }
+    &--rotateplane {
+      width: 60px;
+      height: 60px;
+      background-color: $black;
+      display: inline-block;
+      clip-path: polygon(
+        20% 0%,
+        0% 20%,
+        30% 50%,
+        0% 80%,
+        20% 100%,
+        50% 70%,
+        80% 100%,
+        100% 80%,
+        70% 50%,
+        100% 20%,
+        80% 0%,
+        50% 30%
+      );
+      animation-name: rotateplane;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+  &_container {
+    background-color: $strong-blue;
+    display: grid;
+    grid-template-columns: 100%;
+    &--child {
+      height: 500px;
+      color: whitesmoke;
+      font-size: 8vmin;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      & img {
+        width: 140px;
+      }
+      & p {
+        @include paragraph;
+        width: 70%;
+      }
+
+      &:nth-child(2) {
+        background-color: $black;
+      }
+      &:nth-child(3) {
+        background-color: $salmon;
+      }
+      &:nth-child(4) {
+        background-color: $green2;
+      }
+      &:nth-child(5) {
+        background-image: url(/src/assets/images/github.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+@keyframes rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0) rotateY(0);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
