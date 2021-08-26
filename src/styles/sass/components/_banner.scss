@@ -1,36 +1,20 @@
 .banner{
     width: 90vw;
     margin-top: $mt-title;
-    &_bg{
-        max-width: 75%;
-        margin: auto;
-    }
-    &_bg--img{
-        
-        animation-name: rotacion;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-delay: .5s;
-        animation-timing-function: linear;
+    background-color: $soft-pink;
+    &_text{
+        font-size: 24px;
+    text-align: center;
+        padding: 2rem 0 6rem .5rem;
     }
     &_text{
         font-size: 24px;
         text-align: center;
         &--title{
-            font-weight: 400;
-            color: $strong-blue;
+            color: $black;
+            font-size: 18vw;
+            text-align: left;
         }
     }
         
-}
-@keyframes rotacion {
-    0%{
-        transform: rotate(0deg);
-    }
-    50%{
-        transform: rotate(180deg);
-    }
-    100%{
-        transform: rotate(359deg);
-    }
 }

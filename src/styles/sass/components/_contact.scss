@@ -1,0 +1,36 @@
+.contact {
+  width: 90%;
+  margin-top: $mt;
+  background-color: $strong-blue;
+  &_title {
+    font-size: 18vw;
+    display: inline-block;
+    margin: -11.5rem 0;
+  }
+  &_text {
+      color: whitesmoke;
+      font-size: 8vmin;
+      padding: 5rem;
+      &--paragraph{
+          text-align: left;
+          font-size: 16px;
+          line-height: 30px;
+          padding: 1rem 3rem 3rem 0;
+      }
+      &--email{
+          color: whitesmoke;
+          &::after{
+            content: "";
+            border-bottom: 3px solid;
+            display: block;
+            padding-top: 7rem;
+            width: 10rem;
+            margin-bottom: 3rem;
+          }
+      }
+    
+    &--image {
+      display: none;
+    }
+  }
+}

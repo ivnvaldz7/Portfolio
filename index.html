@@ -1,94 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./src/assets/icons/noun_code_2438946.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./src/styles/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/icons/noun_code_2438946.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./src/styles/css/styles.css" />
     <title>Portfolio.</title>
-</head>
-<body>
-    <header class="header" id="header">
-        <div class="header_icon">
-            <div class="header_icon--bar"></div>
-        </div>
-        <figure class="header_image">
-            <img src="./src/assets/icons/noun_code_2438946.svg" alt="">
-        </figure>
-        <nav class="header_nav">
-            <ul class="header_nav--ul">
-                <li class="header_nav--li"><a href="#">about</a></li>
-                <li class="header_nav--li"><a href="#">proyects</a></li>
-                <li class="header_nav--li"><a href="#">contact</a></li>
-            </ul>
-        </nav>
+  </head>
+  <body>
+    <header class="header">
+      <figure class="header_image">
+        <img src="./src/assets/icons/noun_code_2438946.svg" alt="" />
+      </figure>
+      <nav class="header_nav">
+        <ul class="header_nav--ul" >
+          <li class="header_nav--li"><a href="#abouts">about.</a></li>
+          <li class="header_nav--li"><a href="#proyects">proyects.</a></li>
+          <li class="header_nav--li"><a href="#contact">contact.</a></li>
+        </ul>
+      </nav>
     </header>
     <main class="main">
-        <div class="banner">
-            <article class="banner_text">
-                <h2 class="banner_text--title">Ivan Valdez.</h2>
-            </article>
-            <div class="banner_bg">
-                <img src="./src/assets/images/main-logo.svg" alt="" class="banner_bg--img">
-            </div>
+      <div class="banner">
+        <article class="banner_text">
+          <h2 class="banner_text--title">
+            Hi!! My name is Ivan and this is my portfolio </h2> 
+        </article>
+      </div>
+      <section class="abouts" id="abouts">
+        <h2 class="abouts_title">About.</h2>
+        <div class="abouts_text">
+          <h1 class="abouts_text--title">Hi!, I'm front developer</h1>
+          <img
+            src="./src/assets/images/user-experience.svg"
+            alt="logo front-end"
+            class="abouts_text--img"
+          />
+          <p class="abouts_text--paragraph">
+            I love challenges and doing things with code. I speak, teach and
+            consult.
+          </p>
         </div>
-        <section class="abouts" id="abouts">
-            <h2 class="abouts_title">About.</h2>
-            <div class="abouts_text">
-                <h1 class="abouts_text--title">Hi!, I'm front developer</h1>
-                <img src="./src/assets/images/user-experience.svg" alt="logo front-end" class="abouts_text--img">
-                <p class="abouts_text--paragraph">I love challenges and doing things with code. I speak, teach and consult.</p>
-            </div>
-            <article class="abouts_more">
-                <h2 class="abouts_more--title">More about me...</h2>
-                <p class="abouts_more--paragraph">
-                    I studied self-taught with internet resources, I have projects programmed in HTML, CSS and JS. </p>
-            </article>
-        </section>
-        <section class="proyects" id="proyects">
-            <h2 class="proyects_title">Proyects.</h2>
-            <article class="proyects_text">
-                <p class="proyects_text--title">These are the sites where I have worked with what I have learned.</p>
-                <div class="proyects_text--rotateplane"></div>
-            </article>
-            <article class="proyects_container">
-                <a href="#" class="proyects_container--child">
-                    <h3>Tasty</h3>
-                    <img src="./src/assets/icons/plato.svg" alt="">
-                    <p>This website is designed with SASS and HTML in a responsive way and I use everything I have learned in JS to date.</p>
-                </a>
-                <a href="#" class="proyects_container--child">
-                    <h3>Géneractiva</h3>
-                    <img src="./src/assets/icons/genero.svg" alt="">
-                    <p>Géneractiva was the first website I worked on, it was the one that took me the longest because it has 3 pages included.</p>
-                </a>
-                <a href="#" class="proyects_container--child">
-                    <h3>LassLesVPN</h3>
-                    <img src="./src/assets/icons/vpn.svg" alt="">
-                    <p>This project is only layout for desktop, it works only with Sass and Html.</p>
-                </a>
-                <a href="#" class="proyects_container--child">
-                    <h3>PokeApi</h3>
-                    <img src="./src/assets/icons/pokebola.svg" alt="">
-                    <p>In this project I reused a card that I had made in the Frontend Mentor challenges to give it interaction with the Pokemon API.</p>
-                </a>
-                <a href="#" class="proyects_container--child">
-                    <h3>GitHub</h3>
-                    <img src="./src/assets/icons/github-logo.svg" alt="">
-                    <p>In this project I reused a card that I had made in the Frontend Mentor challenges to give it interaction with the Pokemon API.</p>
-                </a>
-                
-            </article>
-        </section>
-        <section class="contact" id="contact">
-            <h2 class="contact_title">Say hi.</h2>
-            <div class="contact_text">
-                <a href="mailto:ivnvaldz@gmail.com">hello@ivnvaldz.com</a>
-                <p class="contact_text--paragraph"></p>
-            </div>
-        </section>
+        <article class="abouts_more">
+          <h2 class="abouts_more--title">More about me...</h2>
+          <p class="abouts_more--paragraph">
+            I studied self-taught with internet resources, I have projects
+            programmed in HTML, CSS and JS.
+          </p>
+        </article>
+      </section>
+      <section class="proyects" id="proyects">
+        <h2 class="proyects_title">Proyects.</h2>
+        <article class="proyects_text">
+          <p class="proyects_text--title">
+            These are the sites where I have worked with what I have learned.
+          </p>
+          <div class="proyects_text--rotateplane"></div>
+          <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </article>
+        <article class="proyects_container">
+          <a
+            href="https://ivnvaldz7.github.io/Tasty/"
+            target="_blank"
+            class="proyects_container--child"
+          >
+            <h3>Tasty</h3>
+            <img src="./src/assets/icons/plato.svg" alt="" />
+            <p>
+              This website is designed with SASS and HTML in a responsive way
+              and I use everything I have learned in JS to date.
+            </p>
+          </a>
+          <a
+            href="https://g-neractiva.netlify.app/"
+            target="_blank"
+            class="proyects_container--child"
+          >
+            <h3>Géneractiva</h3>
+            <img src="./src/assets/icons/genero.svg" alt="" />
+            <p>
+              Géneractiva was the first website I worked on, it was the one that
+              took me the longest because it has 3 pages included.
+            </p>
+          </a>
+          <a
+            href="https://ivnvaldz7.github.io/LasLesVPN/"
+            target="_blank"
+            class="proyects_container--child"
+          >
+            <h3>LassLesVPN</h3>
+            <img src="./src/assets/icons/vpn.svg" alt="" />
+            <p>
+              This project is only layout for desktop, it works only with Sass
+              and Html.
+            </p>
+          </a>
+          <a
+            href="https://frontmentorpokeapi.netlify.app/"
+            target="_blank"
+            class="proyects_container--child"
+          >
+            <h3>PokeApi</h3>
+            <img src="./src/assets/icons/pokebola.svg" alt="" />
+            <p>
+              In this project I reused a card that I had made in the Frontend
+              Mentor challenges to give it interaction with the Pokemon API.
+            </p>
+          </a>
+          <a
+            href="https://github.com/ivnvaldz7"
+            target="_blank"
+            class="proyects_container--child"
+          >
+            <h3>GitHub</h3>
+            <img src="./src/assets/icons/github-logo.svg" alt="" />
+            <p>
+              This is my GitHub account, where I often upload my projects. I
+              invite you to follow me!
+            </p>
+          </a>
+        </article>
+      </section>
+      <section class="contact" id="contact">
+        <h2 class="contact_title">Say hi.</h2>
+        <article class="contact_text">
+          <a class="contact_text--email" href="mailto:ivnvaldz@gmail.com"
+            >hello@<br />ivnvaldz.com</a
+          >
+          <p class="contact_text--paragraph">
+            I hope we can work together soon, I love mutual collaboration, so I
+            leave you my e-mail so you can contact me.
+          </p>
+          <p class="contact_text--paragraph">
+            Enzo Ivan Valdez<br />Buenos Aires, Argentina
+          </p>
+          <figure class="contact_text--image">
+            <img src="./src/assets/images/Perfil.jpg" alt="" />
+          </figure>
+        </article>
+      </section>
     </main>
+    <div class="go">
+        <div class="go_button">
+            <img src="./src/assets/icons/up-chevron.svg" alt="">
+        </div>
+    </div>
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>

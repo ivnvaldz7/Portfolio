@@ -1,13 +1,13 @@
-let text = document.querySelector('.banner_text--title')
-let str = text.innerHTML
-text.innerHTML = ''
-let speed = 230
-let count = 0
-const typing = ()=>{
-    if(count < str.length){
-        text.innerHTML += str.charAt(count)
-        count++
-        setTimeout(typing, speed)
-    }
-}
-setTimeout(typing, speed)
+window.onscroll = () => {
+  if (document.documentElement.scrollTop > 100) {
+    document.querySelector(".go").classList.add("show");
+  } else {
+    document.querySelector(".go").classList.remove("show");
+  }
+};
+document.querySelector(".go").addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
