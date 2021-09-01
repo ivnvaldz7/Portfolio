@@ -3,34 +3,62 @@
   margin-top: $mt;
   background-color: $strong-blue;
   &_title {
-    font-size: 18vw;
+    font-size: 18vmin;
     display: inline-block;
     margin: -11.5rem 0;
   }
   &_text {
+    color: whitesmoke;
+    font-size: 8vmin;
+    padding: 5rem;
+    &--paragraph {
+      text-align: left;
+      font-size: 16px;
+      line-height: 30px;
+      padding: 1rem 3rem 3rem 0;
+    }
+    &--email {
       color: whitesmoke;
-      font-size: 8vmin;
-      padding: 5rem;
-      &--paragraph{
-          text-align: left;
-          font-size: 16px;
-          line-height: 30px;
-          padding: 1rem 3rem 3rem 0;
+      &::after {
+        content: "";
+        border-bottom: 3px solid;
+        display: block;
+        padding-top: 7rem;
+        width: 10rem;
+        margin-bottom: 3rem;
       }
-      &--email{
-          color: whitesmoke;
-          &::after{
-            content: "";
-            border-bottom: 3px solid;
-            display: block;
-            padding-top: 7rem;
-            width: 10rem;
-            margin-bottom: 3rem;
-          }
-      }
-    
-    &--image {
-      display: none;
     }
   }
+  &_image {
+    display: none;
+    filter: grayscale(1);
+  }
+  @media (min-width: 630px) {
+    &_text{
+      width: 70%;
+    }
+  }
+  @media (min-width: 870px) {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      &_title{
+        margin: -8.5rem 0;
+      }
+      &_text {
+        width: 100%;
+        grid-column: 1;
+      }
+      &_image {
+        display: block;
+        width: 100%;
+        & img {
+          width: inherit;
+        }
+      }
+    }
+    @media (min-width: 1024px){
+      &_title{
+        margin: -10.5rem 0;
+      }
+    }
 }
