@@ -4,21 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ivan Valdez - Frontend Developer Portfolio. Projects built with HTML, CSS, JavaScript and SASS." />
+    <meta name="theme-color" content="#224953" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ivan Valdez - Frontend Developer" />
+    <meta property="og:description" content="Frontend Developer Portfolio. Projects built with HTML, CSS, JavaScript and SASS." />
+    <meta property="og:type" content="website" />
     <link
       rel="shortcut icon"
       href="./src/assets/icons/noun_code_2438946.svg"
       type="image/x-icon"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles/css/styles.css" />
-    <title>Portfolio.</title>
+    <title>Ivan Valdez | Frontend Developer</title>
   </head>
   <body>
     <header class="header">
       <figure class="header_image">
-        <img src="./src/assets/icons/noun_code_2438946.svg" alt="" />
+        <img src="./src/assets/icons/noun_code_2438946.svg" alt="Ivan Valdez logo" />
       </figure>
-      <nav class="header_nav">
-        <ul class="header_nav--ul" >
+      <nav class="header_nav" aria-label="Main navigation">
+        <ul class="header_nav--ul">
           <li class="header_nav--li"><a href="#abouts">about.</a></li>
           <li class="header_nav--li"><a href="#proyects">proyects.</a></li>
           <li class="header_nav--li"><a href="#contact">contact.</a></li>
@@ -60,17 +69,18 @@
           <p class="proyects_text--title">
             These are the sites where I have worked with what I have learned.
           </p>
-          <div class="proyects_text--rotateplane"></div>
-          <div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+          <div class="proyects_text--rotateplane" aria-hidden="true"></div>
+          <div class="lds-grid" aria-hidden="true"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </article>
         <article class="proyects_container">
           <a
             href="https://ivnvaldz7.github.io/Tasty/"
             target="_blank"
+            rel="noopener noreferrer"
             class="proyects_container--child"
           >
             <h3>Tasty</h3>
-            <img src="./src/assets/icons/plato.svg" alt="" />
+            <img src="./src/assets/icons/plato.svg" alt="Tasty project icon" />
             <p>
               This website is designed with SASS and HTML in a responsive way
               and I use everything I have learned in JS to date.
@@ -79,10 +89,11 @@
           <a
             href="https://g-neractiva.netlify.app/"
             target="_blank"
+            rel="noopener noreferrer"
             class="proyects_container--child"
           >
             <h3>Géneractiva</h3>
-            <img src="./src/assets/icons/genero.svg" alt="" />
+            <img src="./src/assets/icons/genero.svg" alt="Géneractiva project icon" />
             <p>
               Géneractiva was the first website I worked on, it was the one that
               took me the longest because it has 3 pages included.
@@ -91,10 +102,11 @@
           <a
             href="https://ivnvaldz7.github.io/LasLesVPN/"
             target="_blank"
+            rel="noopener noreferrer"
             class="proyects_container--child"
           >
             <h3>LassLesVPN</h3>
-            <img src="./src/assets/icons/vpn.svg" alt="" />
+            <img src="./src/assets/icons/vpn.svg" alt="LasLesVPN project icon" />
             <p>
               This project is only layout for desktop, it works only with Sass
               and Html.
@@ -103,10 +115,11 @@
           <a
             href="https://frontmentorpokeapi.netlify.app/"
             target="_blank"
+            rel="noopener noreferrer"
             class="proyects_container--child"
           >
             <h3>PokeApi</h3>
-            <img src="./src/assets/icons/pokebola.svg" alt="" />
+            <img src="./src/assets/icons/pokebola.svg" alt="PokeApi project icon" />
             <p>
               In this project I reused a card that I had made in the Frontend
               Mentor challenges to give it interaction with the Pokemon API.
@@ -115,10 +128,11 @@
           <a
             href="https://github.com/ivnvaldz7"
             target="_blank"
+            rel="noopener noreferrer"
             class="proyects_container--child"
           >
             <h3>GitHub</h3>
-            <img src="./src/assets/icons/github-logo.svg" alt="" />
+            <img src="./src/assets/icons/github-logo.svg" alt="GitHub profile icon" />
             <p>
               This is my GitHub account, where I often upload my projects. I
               invite you to follow me!
@@ -141,15 +155,15 @@
           </p>
         </article>
         <figure class="contact_image">
-          <img src="./src/assets/images/Perfil.jpg" alt="" />
+          <img src="./src/assets/images/Perfil.jpg" alt="Ivan Valdez profile photo" loading="lazy" />
         </figure>
       </section>
     </main>
-    <div class="go">
-        <div class="go_button">
-            <img src="./src/assets/icons/up-chevron.svg" alt="">
-        </div>
-    </div>
+    <button class="go" type="button" aria-label="Scroll to top">
+      <span class="go_button">
+        <img src="./src/assets/icons/up-chevron.svg" alt="" aria-hidden="true" />
+      </span>
+    </button>
     <script src="./app.js"></script>
   </body>
 </html>

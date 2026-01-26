@@ -1,22 +1,27 @@
-.banner{
-    width: 90vw;
-    margin-top: $mt-title;
-    background-color: $soft-pink;
-    &_text{
-        padding: 2rem 0 6rem .5rem;
-        font-size: 24px;
-        text-align: center;
-        &--title{
-            color: $black;
-            font-size: 18vw;
-            text-align: left;
-            @media (min-width: 768px) {
-                font-size: 16vmin;
-            }
-            @media (min-width: 1024px){
-                width: 60%;
-            }
-        }
+@use '../Vars' as *;
+
+.banner {
+  width: 90vw;
+  margin-top: $mt-title;
+  background-color: $soft-pink;
+
+  &_text {
+    padding: 2rem 0 6rem 0.5rem;
+    font-size: 24px;
+    text-align: center;
+
+    &--title {
+      color: $black;
+      font-size: 18vw;
+      text-align: left;
+
+      @media (min-width: 768px) {
+        font-size: 16vmin;
+      }
+
+      @media (min-width: 1024px) {
+        width: 60%;
+      }
     }
-        
+  }
 }

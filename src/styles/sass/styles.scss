@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
+// Variables and Mixins
+@use 'Vars' as *;
+@use 'Mixins' as *;
 
-@import './Vars';
-@import './Mixins';
-@import './components/hedaer';
-@import './components/layout';
-@import './components/banner';
-@import './components/abouts';
-@import './components/proyects';
-@import './components/contact';
-@import './components/chevron';
+// Components
+@use 'components/header';
+@use 'components/layout';
+@use 'components/banner';
+@use 'components/abouts';
+@use 'components/proyects';
+@use 'components/contact';
+@use 'components/chevron';
