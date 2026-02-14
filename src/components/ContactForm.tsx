@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useTranslation } from "@/context/LanguageContext";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const { t } = useTranslation();
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -44,15 +46,15 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="py-12 text-center">
-        <p className="text-2xl font-bold text-white">Message sent!</p>
+        <p className="text-2xl font-bold text-white">{t.contactForm.successTitle}</p>
         <p className="mt-2 text-base text-white/70">
-          I&apos;ll get back to you soon.
+          {t.contactForm.successMessage}
         </p>
         <button
           onClick={() => setStatus("idle")}
           className="mt-6 text-sm text-brand-logo underline transition-colors hover:text-white"
         >
-          Send another message
+          {t.contactForm.sendAnother}
         </button>
       </div>
     );
@@ -63,20 +65,20 @@ export default function ContactForm() {
       <input
         type="text"
         name="name"
-        placeholder="Your name"
+        placeholder={t.contactForm.name}
         required
         className="rounded-md border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-white/50 outline-none transition-colors focus:border-brand-logo"
       />
       <input
         type="email"
         name="email"
-        placeholder="Your email"
+        placeholder={t.contactForm.email}
         required
         className="rounded-md border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-white/50 outline-none transition-colors focus:border-brand-logo"
       />
       <textarea
         name="message"
-        placeholder="Your message"
+        placeholder={t.contactForm.message}
         required
         rows={4}
         className="resize-none rounded-md border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-white/50 outline-none transition-colors focus:border-brand-logo"
@@ -89,7 +91,7 @@ export default function ContactForm() {
         disabled={status === "loading"}
         className="rounded-md bg-brand-logo px-6 py-3 text-base font-bold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
       >
-        {status === "loading" ? "Sending..." : "Send message"}
+        {status === "loading" ? t.contactForm.sending : t.contactForm.send}
       </button>
     </form>
   );

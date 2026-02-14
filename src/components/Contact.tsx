@@ -1,15 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import { personalInfo } from "@/data/personal";
+import { useTranslation } from "@/context/LanguageContext";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section
       className="relative mt-[350px] w-[90%] bg-brand-strong-blue"
       id="contact"
     >
-      <h2 className="absolute bottom-full left-0 translate-y-[21%] text-[18vmin] leading-none">
-        Say hi.
+      <h2 className="absolute bottom-full left-0 translate-y-[21%] text-[18vmin] leading-none text-brand-text dark:text-white/20">
+        {t.contact.sectionTitle}
       </h2>
 
       <div className="min-[870px]:grid min-[870px]:grid-cols-2">
@@ -26,8 +31,7 @@ export default function Contact() {
             <span className="mt-16 mb-8 block w-40 border-b-[3px] border-current" />
           </a>
           <p className="pr-4 text-left text-base leading-[30px] text-white min-[375px]:pr-12">
-            I&apos;m open to opportunities where I can contribute to real-world
-            systems, automation and business-driven applications
+            {t.contact.openTo}
           </p>
           <p className="pr-4 pt-4 text-left text-base leading-[30px] text-white min-[375px]:pr-12">
             {personalInfo.fullName}
@@ -38,7 +42,7 @@ export default function Contact() {
           {/* Contact form */}
           <div className="mt-12">
             <h3 className="mb-6 text-xl font-bold text-white">
-              Or send me a message
+              {t.contactForm.title}
             </h3>
             <ContactForm />
           </div>

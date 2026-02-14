@@ -1,13 +1,14 @@
 "use client";
 
 import { personalInfo } from "@/data/personal";
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function WhatsAppButton() {
+  const { t } = useTranslation();
+
   if (!personalInfo.whatsapp) return null;
 
-  const message = encodeURIComponent(
-    "Hi Ivan! I saw your portfolio and I'd like to get in touch."
-  );
+  const message = encodeURIComponent(t.whatsapp.message);
   const url = `https://wa.me/${personalInfo.whatsapp}?text=${message}`;
 
   return (
@@ -15,7 +16,7 @@ export default function WhatsAppButton() {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contact via WhatsApp"
+      aria-label={t.whatsapp.label}
       className="fixed bottom-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform duration-300 hover:scale-110"
     >
       <svg viewBox="0 0 32 32" className="h-7 w-7 fill-white">

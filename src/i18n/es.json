@@ -1,0 +1,72 @@
+{
+  "header": {
+    "about": "sobre mí.",
+    "projects": "proyectos.",
+    "contact": "contacto."
+  },
+  "banner": {
+    "greeting": "Hola,",
+    "name": "Soy Ivan",
+    "role": "Full Stack Developer"
+  },
+  "about": {
+    "sectionTitle": "Sobre mí.",
+    "title": "Hola!, Soy Frontend Developer",
+    "description": "Construyo sistemas prácticos que resuelven problemas operativos reales. Enfocado en logística, automatización y aplicaciones web escalables.",
+    "moreTitle": "Más sobre mí...",
+    "moreDescription": "Comencé mi camino como desarrollador autodidacta, aprendiendo a través de recursos online estructurados y proyectos prácticos. Hoy me enfoco en construir aplicaciones web escalables que resuelven problemas operativos y de negocio."
+  },
+  "projects": {
+    "sectionTitle": "Proyectos.",
+    "intro": "Aquí encontrarás sistemas reales y aplicaciones web construidas para mejorar flujos de trabajo, optimizar procesos y entregar soluciones prácticas."
+  },
+  "contact": {
+    "sectionTitle": "Hablemos.",
+    "openTo": "Estoy abierto a oportunidades donde pueda contribuir a sistemas reales, automatización y aplicaciones orientadas al negocio"
+  },
+  "contactForm": {
+    "title": "O enviame un mensaje",
+    "name": "Tu nombre",
+    "email": "Tu email",
+    "message": "Tu mensaje",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "successTitle": "¡Mensaje enviado!",
+    "successMessage": "Te responderé pronto.",
+    "sendAnother": "Enviar otro mensaje"
+  },
+  "whatsapp": {
+    "label": "Contactar por WhatsApp",
+    "message": "¡Hola Ivan! Vi tu portfolio y me gustaría ponerme en contacto."
+  },
+  "scrollToTop": {
+    "label": "Volver arriba"
+  },
+  "comingSoon": {
+    "title": "Próximamente...",
+    "description": "Nuevo proyecto en camino. Mantenete atento."
+  },
+  "projectData": {
+    "tasty": {
+      "description": "Este sitio web está diseñado con SASS y HTML de forma responsive y utilizo todo lo aprendido en JS hasta la fecha."
+    },
+    "generactiva": {
+      "description": "Géneractiva fue el primer sitio web en el que trabajé, fue el que más tiempo me llevó porque tiene 3 páginas incluidas."
+    },
+    "laslesvpn": {
+      "description": "Este proyecto es solo maquetado para escritorio, funciona solo con Sass y Html."
+    },
+    "pokeapi": {
+      "description": "En este proyecto reutilicé una tarjeta que había hecho en los desafíos de Frontend Mentor para darle interacción con la API de Pokemon."
+    },
+    "github": {
+      "description": "Esta es mi cuenta de GitHub, donde suelo subir mis proyectos. ¡Te invito a seguirme!"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Página no encontrada",
+    "description": "Parece que esta página se fue a tomar un café y nunca volvió.",
+    "button": "Volver al inicio"
+  }
+}

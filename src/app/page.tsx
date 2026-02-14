@@ -5,6 +5,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 import Contact from "@/components/Contact";
 import ScrollToTop from "@/components/ScrollToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function Home() {
   return (
@@ -13,9 +14,15 @@ export default function Home() {
         <Header />
         <main className="grid w-full grid-cols-1 justify-items-center">
           <Banner />
-          <About />
-          <ProjectGrid />
-          <Contact />
+          <AnimatedSection>
+            <About />
+          </AnimatedSection>
+          <AnimatedSection>
+            <ProjectGrid />
+          </AnimatedSection>
+          <AnimatedSection>
+            <Contact />
+          </AnimatedSection>
         </main>
       </div>
       <ScrollToTop />

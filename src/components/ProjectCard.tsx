@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { Project } from "@/types";
+import { useTranslation } from "@/context/LanguageContext";
 
 interface ProjectCardProps {
   project: Project;
@@ -18,6 +21,10 @@ const bgColors = [
 ];
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const { t } = useTranslation();
+  const projectTranslation = (t.projectData as Record<string, { description: string }>)[project.id];
+  const description = projectTranslation?.description ?? project.description;
+
   return (
     <a
       href={project.url}
@@ -41,7 +48,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         className="w-[100px] min-[375px]:w-[140px] transition-transform duration-300 hover:scale-110"
       />
       <p className="w-[85%] text-center text-sm leading-relaxed text-white min-[375px]:w-[70%] min-[375px]:text-base min-[375px]:leading-[30px]">
-        {project.description}
+        {description}
       </p>
     </a>
   );

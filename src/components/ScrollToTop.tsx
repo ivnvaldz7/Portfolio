@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useTranslation } from "@/context/LanguageContext";
 import styles from "./ScrollToTop.module.css";
 
 export default function ScrollToTop() {
   const { ref, isIntersecting } = useIntersectionObserver({
     rootMargin: "-100px 0px 0px 0px",
   });
+  const { t } = useTranslation();
 
   const visible = !isIntersecting;
 
@@ -22,7 +24,7 @@ export default function ScrollToTop() {
       <button
         className={`${styles.go} ${visible ? styles.show : ""}`}
         type="button"
-        aria-label="Scroll to top"
+        aria-label={t.scrollToTop.label}
         onClick={scrollToTop}
       >
         <span className={styles.goButton}>

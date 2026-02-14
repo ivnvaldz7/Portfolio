@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Use .dark class (from next-themes) instead of prefers-color-scheme */
+@custom-variant dark (&:is(.dark *));
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -16,6 +19,10 @@
   --color-brand-salmon: hsl(2, 45%, 56%);
   --color-brand-logo: hsl(14, 59%, 64%);
   --color-brand-black: hsl(0, 0%, 10%);
+
+  /* Semantic tokens (invertible in dark mode) */
+  --color-brand-text: hsl(0, 0%, 10%);
+  --color-brand-text-secondary: hsl(189, 42%, 26%);
 }
 
 html {
@@ -24,6 +31,12 @@ html {
 
 body {
   font-family: var(--font-sans);
+  background-color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background-color: hsl(0, 0%, 7%);
 }
 
 h1, h2, h3 {
@@ -36,4 +49,42 @@ a {
 
 li {
   list-style: none;
+}
+
+/* ── Dark mode overrides — pastel palette ───────────── */
+.dark {
+  color-scheme: dark;
+  background-color: hsl(0, 0%, 7%);
+
+  /* Backgrounds — soft dark with pastel tinting */
+  --color-brand-green: hsl(161, 35%, 32%);
+  --color-brand-green-dark: hsl(156, 30%, 28%);
+  --color-brand-cyan: hsl(193, 28%, 34%);
+  --color-brand-pink: hsl(13, 25%, 22%);
+  --color-brand-soft-pink: hsl(0, 0%, 7%);
+  --color-brand-strong-blue: hsl(192, 25%, 16%);
+  --color-brand-salmon: hsl(2, 50%, 55%);
+
+  /* Accents — pastel */
+  --color-brand-logo: hsl(14, 65%, 76%);
+
+  /* Text — pastel tones */
+  --color-brand-text: hsl(14, 12%, 90%);
+  --color-brand-text-secondary: hsl(189, 50%, 78%);
+}
+
+/* Smooth transitions for themed elements */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+/* Opt-out for elements that handle their own transitions */
+a, button, input, textarea {
+  transition-property: background-color, border-color, color, opacity, transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
 }

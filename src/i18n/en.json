@@ -1,0 +1,72 @@
+{
+  "header": {
+    "about": "about.",
+    "projects": "projects.",
+    "contact": "contact."
+  },
+  "banner": {
+    "greeting": "Hi,",
+    "name": "I'm Ivan",
+    "role": "Full Stack Developer"
+  },
+  "about": {
+    "sectionTitle": "About.",
+    "title": "Hi!, I'm Frontend Developer",
+    "description": "I build practical systems that solve real operational problems. Focused on logistics, automation and scalable web applications.",
+    "moreTitle": "More about me...",
+    "moreDescription": "I started my journey as a self-taught developer, learning through structured online resources and hands-on projects. Today, I focus on building scalable web applications that solve operational and business problems."
+  },
+  "projects": {
+    "sectionTitle": "Projects.",
+    "intro": "Here you'll find real-world systems and web applications built to improve workflows, optimize processes and deliver practical solutions."
+  },
+  "contact": {
+    "sectionTitle": "Say hi.",
+    "openTo": "I'm open to opportunities where I can contribute to real-world systems, automation and business-driven applications"
+  },
+  "contactForm": {
+    "title": "Or send me a message",
+    "name": "Your name",
+    "email": "Your email",
+    "message": "Your message",
+    "send": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "I'll get back to you soon.",
+    "sendAnother": "Send another message"
+  },
+  "whatsapp": {
+    "label": "Contact via WhatsApp",
+    "message": "Hi Ivan! I saw your portfolio and I'd like to get in touch."
+  },
+  "scrollToTop": {
+    "label": "Scroll to top"
+  },
+  "comingSoon": {
+    "title": "Coming\nSoon...",
+    "description": "New project on the way. Stay tuned."
+  },
+  "projectData": {
+    "tasty": {
+      "description": "This website is designed with SASS and HTML in a responsive way and I use everything I have learned in JS to date."
+    },
+    "generactiva": {
+      "description": "Géneractiva was the first website I worked on, it was the one that took me the longest because it has 3 pages included."
+    },
+    "laslesvpn": {
+      "description": "This project is only layout for desktop, it works only with Sass and Html."
+    },
+    "pokeapi": {
+      "description": "In this project I reused a card that I had made in the Frontend Mentor challenges to give it interaction with the Pokemon API."
+    },
+    "github": {
+      "description": "This is my GitHub account, where I often upload my projects. I invite you to follow me!"
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Page not found",
+    "description": "Looks like this page took a coffee break and never came back.",
+    "button": "Back to home"
+  }
+}
