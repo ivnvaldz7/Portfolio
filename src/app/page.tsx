@@ -4,6 +4,7 @@ import About from "@/components/About";
 import ProjectGrid from "@/components/ProjectGrid";
 import Contact from "@/components/Contact";
 import ScrollToTop from "@/components/ScrollToTop";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         </main>
       </div>
       <ScrollToTop />
+      <WhatsAppButton />
     </>
   );
 }

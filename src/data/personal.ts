@@ -6,6 +6,7 @@ export const personalInfo: PersonalInfo = {
   role: "Frontend Developer",
   email: "ivnvaldz@gmail.com",
   location: "Buenos Aires, Argentina",
+  whatsapp: "5491123910858",
   socials: {
     github: "https://github.com/ivnvaldz7",
   },
