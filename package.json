@@ -1,15 +1,29 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
-  "description": "Portfolio Web",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Ivan Valdez - Frontend Developer Portfolio",
+  "private": true,
   "scripts": {
-    "sass": "sass -w src/styles/sass/styles.scss:src/styles/css/styles.css"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "keywords": [],
   "author": "Ivan Valdez",
   "license": "MIT",
+  "dependencies": {
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
   "devDependencies": {
-    "sass": "^1.38.0"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

@@ -1,0 +1,61 @@
+.go {
+  position: fixed;
+  bottom: -2rem;
+  right: -2rem;
+  width: 6.6rem;
+  height: 6.6rem;
+  z-index: -1;
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.goButton {
+  width: 0;
+  height: 0;
+  background-color: hsl(14, 59%, 64%);
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.goIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.2s;
+  width: 24px;
+  height: 24px;
+}
+
+.go:focus-visible .goButton {
+  box-shadow: 0 0 0 3px rgba(209, 134, 104, 0.5);
+}
+
+.show {
+  z-index: 10;
+}
+
+.show .goButton {
+  animation: popup 0.3s ease-in-out;
+  width: 4rem;
+  height: 4rem;
+  z-index: 11;
+}
+
+.show .goIcon {
+  transform: translate(-50%, -50%) scale(1) !important;
+}
+
+@keyframes popup {
+  0% { width: 0; height: 0; }
+  50% { width: 6rem; height: 6rem; }
+  100% { width: 4rem; height: 4rem; }
+}
