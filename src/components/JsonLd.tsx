@@ -6,7 +6,7 @@ export default function JsonLd() {
     alternateName: "Enzo Ivan Valdez",
     url: "https://ivnvaldz.com",
     email: "ivnvaldz@gmail.com",
-    jobTitle: "Full Stack Developer",
+    jobTitle: "Frontend Developer",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Buenos Aires",

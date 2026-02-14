@@ -16,13 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ivan Valdez | Full Stack Developer",
+  title: "Ivan Valdez | Frontend Developer",
   description:
-    "Ivan Valdez - Full Stack Developer Portfolio. Projects built with Next.js, React, TypeScript and more. Focused on logistics, automation and scalable web applications.",
+    "Ivan Valdez - Frontend Developer Portfolio. Projects built with Next.js, React, TypeScript and more. Focused on logistics, automation and scalable web applications.",
   metadataBase: new URL("https://ivnvaldz.com"),
   keywords: [
     "Ivan Valdez",
-    "Full Stack Developer",
     "Frontend Developer",
     "React",
     "Next.js",
@@ -45,9 +44,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Ivan Valdez - Full Stack Developer",
+    title: "Ivan Valdez - Frontend Developer",
     description:
-      "Full Stack Developer Portfolio. Projects built with Next.js, React, TypeScript and more.",
+      "Frontend Developer Portfolio. Projects built with Next.js, React, TypeScript and more.",
     url: "https://ivnvaldz.com",
     siteName: "Ivan Valdez Portfolio",
     locale: "en_US",
@@ -55,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ivan Valdez - Full Stack Developer",
+    title: "Ivan Valdez - Frontend Developer",
     description:
-      "Full Stack Developer Portfolio. Projects built with Next.js, React, TypeScript and more.",
+      "Frontend Developer Portfolio. Projects built with Next.js, React, TypeScript and more.",
   },
   alternates: {
     canonical: "https://ivnvaldz.com",

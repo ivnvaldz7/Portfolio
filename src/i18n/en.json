@@ -5,9 +5,9 @@
     "contact": "contact."
   },
   "banner": {
-    "greeting": "Hi,",
+    "greeting": "Hello,",
     "name": "I'm Ivan",
-    "role": "Full Stack Developer"
+    "role": "Frontend Developer"
   },
   "about": {
     "sectionTitle": "About.",

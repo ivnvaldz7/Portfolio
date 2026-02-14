@@ -55,6 +55,7 @@ export default function Contact() {
             alt="Ivan Valdez profile photo"
             width={600}
             height={800}
+            sizes="(max-width: 869px) 0px, (max-width: 1280px) 50vw, 640px"
             className="h-full w-full object-cover"
             loading="lazy"
           />

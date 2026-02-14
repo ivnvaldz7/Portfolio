@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <div className="mx-auto grid max-w-[1280px] grid-cols-1 place-content-center justify-items-center">
         <Header />
-        <main className="grid w-full grid-cols-1 justify-items-center">
+        <main id="main" className="grid w-full grid-cols-1 justify-items-center">
           <Banner />
           <AnimatedSection>
             <About />
