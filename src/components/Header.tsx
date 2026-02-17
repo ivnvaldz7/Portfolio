@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <>
       {/* Fixed controls — always visible */}
-      <div className="fixed top-4 right-4 z-50 flex items-center gap-1 rounded-full bg-white/70 px-1 shadow-sm backdrop-blur-sm dark:bg-white/10">
+      <div className="fixed top-4 right-4 z-50 flex items-center gap-1 rounded-full border border-border-subtle bg-white/70 px-1 backdrop-blur-md dark:border-border-default dark:bg-white/10">
         <LanguageSwitcher />
         <ThemeToggle />
       </div>
@@ -34,12 +34,12 @@ export default function Header() {
           />
         </figure>
         <nav className="w-full max-w-[90vw] pt-8" aria-label="Main navigation">
-          <ul className="flex justify-evenly text-sm min-[375px]:text-base md:text-xl">
+          <ul className="flex justify-evenly text-sm min-[375px]:text-base md:text-lg">
             {navKeys.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-brand-text transition-colors duration-200 hover:text-brand-logo"
+                  className="rounded-sm px-2 py-1 font-medium tracking-wide text-text-primary hover:text-accent-coral"
                 >
                   {t.header[link.key]}
                 </a>

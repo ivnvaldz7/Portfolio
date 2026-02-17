@@ -7,7 +7,47 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* Brand colors — migrated from _Vars.scss */
+  /* ── Surface palette ─────────────────────────────── */
+  --color-surface-warm: hsl(14, 81%, 96%);
+  --color-surface-earth: hsl(161, 49%, 45%);
+  --color-surface-earth-deep: hsl(156, 48%, 40%);
+  --color-surface-sand: hsl(193, 30%, 69%);
+  --color-surface-blush: hsl(13, 53%, 82%);
+  --color-surface-ocean: hsl(192, 42%, 23%);
+  --color-surface-ink: hsl(0, 0%, 10%);
+
+  /* ── Accent palette ──────────────────────────────── */
+  --color-accent-coral: hsl(14, 59%, 64%);
+  --color-accent-ember: hsl(2, 45%, 56%);
+
+  /* ── Text hierarchy (4 levels) ───────────────────── */
+  --color-text-primary: hsl(0, 0%, 10%);
+  --color-text-secondary: hsl(189, 42%, 26%);
+  --color-text-tertiary: hsl(0, 0%, 40%);
+  --color-text-muted: hsl(0, 0%, 60%);
+
+  /* ── On-dark text hierarchy ──────────────────────── */
+  --color-on-dark: hsl(0, 0%, 100%);
+  --color-on-dark-secondary: hsla(0, 0%, 100%, 0.75);
+  --color-on-dark-tertiary: hsla(0, 0%, 100%, 0.50);
+  --color-on-dark-muted: hsla(0, 0%, 100%, 0.30);
+
+  /* ── Border progression ──────────────────────────── */
+  --color-border-subtle: hsla(0, 0%, 0%, 0.06);
+  --color-border-default: hsla(0, 0%, 0%, 0.12);
+  --color-border-emphasis: hsla(0, 0%, 0%, 0.20);
+  --color-border-focus: hsl(14, 59%, 64%);
+
+  /* ── Spacing scale (base 8) ──────────────────────── */
+  --spacing-section: clamp(12rem, 22vw, 22rem);
+
+  /* ── Border radius scale ─────────────────────────── */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* ── Legacy aliases (for Tailwind class compat) ──── */
   --color-brand-green: hsl(161, 49%, 45%);
   --color-brand-green-dark: hsl(156, 48%, 40%);
   --color-brand-cyan: hsl(193, 30%, 69%);
@@ -19,8 +59,6 @@
   --color-brand-salmon: hsl(2, 45%, 56%);
   --color-brand-logo: hsl(14, 59%, 64%);
   --color-brand-black: hsl(0, 0%, 10%);
-
-  /* Semantic tokens (invertible in dark mode) */
   --color-brand-text: hsl(0, 0%, 10%);
   --color-brand-text-secondary: hsl(189, 42%, 26%);
 }
@@ -32,7 +70,6 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: white;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dark body {
@@ -51,12 +88,36 @@ li {
   list-style: none;
 }
 
-/* ── Dark mode overrides — pastel palette ───────────── */
+/* ── Dark mode overrides ────────────────────────────── */
 .dark {
   color-scheme: dark;
   background-color: hsl(0, 0%, 7%);
 
-  /* Backgrounds — soft dark with pastel tinting */
+  /* Surfaces — muted for dark */
+  --color-surface-warm: hsl(0, 0%, 7%);
+  --color-surface-earth: hsl(161, 35%, 32%);
+  --color-surface-earth-deep: hsl(156, 30%, 28%);
+  --color-surface-sand: hsl(193, 28%, 34%);
+  --color-surface-blush: hsl(13, 25%, 22%);
+  --color-surface-ocean: hsl(192, 25%, 16%);
+  --color-surface-ink: hsl(0, 0%, 12%);
+
+  /* Accents — pastel */
+  --color-accent-coral: hsl(14, 65%, 76%);
+  --color-accent-ember: hsl(2, 50%, 55%);
+
+  /* Text — warm light */
+  --color-text-primary: hsl(14, 12%, 90%);
+  --color-text-secondary: hsl(189, 50%, 78%);
+  --color-text-tertiary: hsl(0, 0%, 65%);
+  --color-text-muted: hsl(0, 0%, 45%);
+
+  /* Borders — light on dark */
+  --color-border-subtle: hsla(0, 0%, 100%, 0.06);
+  --color-border-default: hsla(0, 0%, 100%, 0.12);
+  --color-border-emphasis: hsla(0, 0%, 100%, 0.20);
+
+  /* Legacy aliases */
   --color-brand-green: hsl(161, 35%, 32%);
   --color-brand-green-dark: hsl(156, 30%, 28%);
   --color-brand-cyan: hsl(193, 28%, 34%);
@@ -64,27 +125,43 @@ li {
   --color-brand-soft-pink: hsl(0, 0%, 7%);
   --color-brand-strong-blue: hsl(192, 25%, 16%);
   --color-brand-salmon: hsl(2, 50%, 55%);
-
-  /* Accents — pastel */
   --color-brand-logo: hsl(14, 65%, 76%);
-
-  /* Text — pastel tones */
   --color-brand-text: hsl(14, 12%, 90%);
   --color-brand-text-secondary: hsl(189, 50%, 78%);
 }
 
-/* Smooth transitions for themed elements */
-*,
-*::before,
-*::after {
-  transition-property: background-color, border-color, color;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
+/* ── Themed transitions — scoped, not global ────────── */
+body,
+section,
+article,
+header,
+nav,
+figure,
+div[class*="bg-"] {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Opt-out for elements that handle their own transitions */
+h1, h2, h3, h4, p, span, a, li, label {
+  transition: color 0.2s ease;
+}
+
+/* Interactive elements — richer transitions */
 a, button, input, textarea {
-  transition-property: background-color, border-color, color, opacity, transform, box-shadow;
-  transition-duration: 0.2s;
-  transition-timing-function: ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+              opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ── Global focus-visible ring ──────────────────────── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent-coral);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-accent-coral);
+  box-shadow: 0 0 0 3px hsla(14, 59%, 64%, 0.25);
 }

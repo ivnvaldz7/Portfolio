@@ -46,13 +46,13 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="py-12 text-center">
-        <p className="text-2xl font-bold text-white">{t.contactForm.successTitle}</p>
-        <p className="mt-2 text-base text-white/70">
+        <p className="text-2xl font-semibold tracking-tight text-on-dark">{t.contactForm.successTitle}</p>
+        <p className="mt-3 text-base text-on-dark-tertiary">
           {t.contactForm.successMessage}
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-6 text-sm text-brand-logo underline transition-colors hover:text-white"
+          className="mt-8 text-sm font-medium text-accent-coral underline underline-offset-4 hover:text-on-dark"
         >
           {t.contactForm.sendAnother}
         </button>
@@ -67,29 +67,29 @@ export default function ContactForm() {
         name="name"
         placeholder={t.contactForm.name}
         required
-        className="rounded-md border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-white/50 outline-none transition-colors focus:border-brand-logo"
+        className="rounded-[var(--radius-md)] border border-on-dark-muted bg-white/8 px-4 py-3 text-base text-on-dark placeholder-on-dark-tertiary outline-none hover:border-on-dark-tertiary focus:border-accent-coral"
       />
       <input
         type="email"
         name="email"
         placeholder={t.contactForm.email}
         required
-        className="rounded-md border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-white/50 outline-none transition-colors focus:border-brand-logo"
+        className="rounded-[var(--radius-md)] border border-on-dark-muted bg-white/8 px-4 py-3 text-base text-on-dark placeholder-on-dark-tertiary outline-none hover:border-on-dark-tertiary focus:border-accent-coral"
       />
       <textarea
         name="message"
         placeholder={t.contactForm.message}
         required
         rows={4}
-        className="resize-none rounded-md border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-white/50 outline-none transition-colors focus:border-brand-logo"
+        className="resize-none rounded-[var(--radius-md)] border border-on-dark-muted bg-white/8 px-4 py-3 text-base text-on-dark placeholder-on-dark-tertiary outline-none hover:border-on-dark-tertiary focus:border-accent-coral"
       />
       {status === "error" && (
-        <p className="text-sm text-brand-salmon">{errorMsg}</p>
+        <p className="text-sm font-medium text-accent-ember">{errorMsg}</p>
       )}
       <button
         type="submit"
         disabled={status === "loading"}
-        className="rounded-md bg-brand-logo px-6 py-3 text-base font-bold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+        className="rounded-[var(--radius-md)] bg-accent-coral px-6 py-3 text-base font-semibold text-white hover:brightness-110 active:brightness-95 disabled:opacity-50"
       >
         {status === "loading" ? t.contactForm.sending : t.contactForm.send}
       </button>

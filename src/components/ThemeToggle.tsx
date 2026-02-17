@@ -20,7 +20,7 @@ export default function ThemeToggle() {
       type="button"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="relative flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-brand-text/10"
+      className="relative flex h-9 w-9 items-center justify-center rounded-full hover:bg-text-primary/10"
     >
       {/* Sun */}
       <svg
@@ -31,7 +31,7 @@ export default function ThemeToggle() {
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={`absolute h-5 w-5 text-brand-text transition-all duration-300 ${
+        className={`absolute h-5 w-5 text-text-primary transition-all duration-300 ${
           isDark
             ? "rotate-0 scale-100 opacity-100"
             : "-rotate-90 scale-0 opacity-0"
@@ -57,7 +57,7 @@ export default function ThemeToggle() {
         strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={`absolute h-5 w-5 text-brand-text transition-all duration-300 ${
+        className={`absolute h-5 w-5 text-text-primary transition-all duration-300 ${
           isDark
             ? "rotate-90 scale-0 opacity-0"
             : "rotate-0 scale-100 opacity-100"

@@ -10,7 +10,7 @@ export default function LanguageSwitcher() {
       type="button"
       aria-label={locale === "en" ? "Cambiar a español" : "Switch to English"}
       onClick={toggleLocale}
-      className="flex h-9 items-center rounded-full px-2 text-sm font-semibold text-brand-text transition-colors hover:bg-brand-text/10"
+      className="flex h-9 items-center rounded-full px-2 font-mono text-xs font-semibold tracking-wider text-text-primary hover:bg-text-primary/10"
     >
       {locale === "en" ? "ES" : "EN"}
     </button>

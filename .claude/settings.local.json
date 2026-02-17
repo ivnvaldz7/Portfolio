@@ -9,7 +9,11 @@
       "Bash(git checkout:*)",
       "Bash(git merge:*)",
       "Bash(git stash:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(npx netlify:*)",
+      "Bash(kill:*)",
+      "Bash(npx skills add:*)",
+      "Bash(npx next build)"
     ]
   }
 }
