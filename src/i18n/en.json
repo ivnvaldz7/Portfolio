@@ -22,7 +22,8 @@
   },
   "contact": {
     "sectionTitle": "Say hi.",
-    "openTo": "I'm open to opportunities where I can contribute to real-world systems, automation and business-driven applications"
+    "openTo": "I'm open to opportunities where I can contribute to real-world systems, automation and business-driven applications",
+    "downloadCV": "Download CV"
   },
   "contactForm": {
     "title": "Or send me a message",
@@ -53,8 +54,8 @@
     "generactiva": {
       "description": "Géneractiva was the first website I worked on, it was the one that took me the longest because it has 3 pages included."
     },
-    "laslesvpn": {
-      "description": "This project is only layout for desktop, it works only with Sass and Html."
+    "alebet-manager": {
+      "description": "Logistics management system built with modern technologies to streamline operations and tracking."
     },
     "pokeapi": {
       "description": "In this project I reused a card that I had made in the Frontend Mentor challenges to give it interaction with the Pokemon API."

@@ -52,7 +52,7 @@ export default function ContactForm() {
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-8 text-sm font-medium text-accent-coral underline underline-offset-4 hover:text-on-dark"
+          className="mt-8 text-sm font-medium text-accent-coral underline underline-offset-4 hover:text-on-dark transition-colors duration-300"
         >
           {t.contactForm.sendAnother}
         </button>
@@ -61,27 +61,29 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <input
-        type="text"
-        name="name"
-        placeholder={t.contactForm.name}
-        required
-        className="rounded-[var(--radius-md)] border border-on-dark-muted bg-white/8 px-4 py-3 text-base text-on-dark placeholder-on-dark-tertiary outline-none hover:border-on-dark-tertiary focus:border-accent-coral"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder={t.contactForm.email}
-        required
-        className="rounded-[var(--radius-md)] border border-on-dark-muted bg-white/8 px-4 py-3 text-base text-on-dark placeholder-on-dark-tertiary outline-none hover:border-on-dark-tertiary focus:border-accent-coral"
-      />
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+      <div className="grid grid-cols-2 gap-3">
+        <input
+          type="text"
+          name="name"
+          placeholder={t.contactForm.name}
+          required
+          className="border-b border-on-dark-muted bg-transparent px-1 py-3 text-sm text-on-dark placeholder-on-dark-tertiary outline-none transition-colors duration-300 focus:border-accent-coral"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder={t.contactForm.email}
+          required
+          className="border-b border-on-dark-muted bg-transparent px-1 py-3 text-sm text-on-dark placeholder-on-dark-tertiary outline-none transition-colors duration-300 focus:border-accent-coral"
+        />
+      </div>
       <textarea
         name="message"
         placeholder={t.contactForm.message}
         required
-        rows={4}
-        className="resize-none rounded-[var(--radius-md)] border border-on-dark-muted bg-white/8 px-4 py-3 text-base text-on-dark placeholder-on-dark-tertiary outline-none hover:border-on-dark-tertiary focus:border-accent-coral"
+        rows={3}
+        className="resize-none border-b border-on-dark-muted bg-transparent px-1 py-3 text-sm text-on-dark placeholder-on-dark-tertiary outline-none transition-colors duration-300 focus:border-accent-coral"
       />
       {status === "error" && (
         <p className="text-sm font-medium text-accent-ember">{errorMsg}</p>
@@ -89,7 +91,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="rounded-[var(--radius-md)] bg-accent-coral px-6 py-3 text-base font-semibold text-white hover:brightness-110 active:brightness-95 disabled:opacity-50"
+        className="mt-2 self-start rounded-full border border-on-dark-muted bg-transparent px-6 py-2.5 text-sm font-medium tracking-wide text-on-dark transition-all duration-300 hover:border-accent-coral hover:text-accent-coral disabled:opacity-50"
       >
         {status === "loading" ? t.contactForm.sending : t.contactForm.send}
       </button>

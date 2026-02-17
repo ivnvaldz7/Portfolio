@@ -22,7 +22,8 @@
   },
   "contact": {
     "sectionTitle": "Hablemos.",
-    "openTo": "Estoy abierto a oportunidades donde pueda contribuir a sistemas reales, automatización y aplicaciones orientadas al negocio"
+    "openTo": "Estoy abierto a oportunidades donde pueda contribuir a sistemas reales, automatización y aplicaciones orientadas al negocio",
+    "downloadCV": "Descargar CV"
   },
   "contactForm": {
     "title": "O enviame un mensaje",
@@ -53,8 +54,8 @@
     "generactiva": {
       "description": "Géneractiva fue el primer sitio web en el que trabajé, fue el que más tiempo me llevó porque tiene 3 páginas incluidas."
     },
-    "laslesvpn": {
-      "description": "Este proyecto es solo maquetado para escritorio, funciona solo con Sass y Html."
+    "alebet-manager": {
+      "description": "Sistema de gestión logística construido con tecnologías modernas para optimizar operaciones y seguimiento."
     },
     "pokeapi": {
       "description": "En este proyecto reutilicé una tarjeta que había hecho en los desafíos de Frontend Mentor para darle interacción con la API de Pokemon."
