@@ -19,12 +19,6 @@ Fuentes: auditoría Claude (config/deps) + auditoría Codex (código fuente)
 **Cuándo escala a problema:** Si se necesita indexación SEO independiente en inglés.  
 **Fix potencial:** Migrar a `next-intl` con middleware. Implica cambio arquitectural, no un fix menor.
 
-### [M2] Cast inseguro en traducciones de proyectos
-**Archivos:** `src/components/ProjectCard.tsx`, `src/i18n/en.json`, `src/i18n/es.json`  
-**Problema (Codex):** Las descripciones localizadas de proyectos se acceden con un cast `as Record<string, { description: string }>` sobre `t.projectData`. Si un proyecto tiene un `id` que no matchea una clave en el JSON de traducción, falla en silencio mostrando `undefined`.  
-**Fix:** Definir un tipo derivado de la estructura real de `projects.ts` para las traducciones, en lugar del cast genérico. Agregar validación en desarrollo que loguee ids faltantes.  
-**Costo:** Medio. **Impacto:** Medio (no rompe visualmente, pero es deuda de tipo real).
-
 ### [M3] useTranslation() con fallback silencioso
 **Archivo:** `src/context/LanguageContext.tsx`  
 **Problema (Codex):** `useTranslation()` devuelve un fallback en inglés si se usa fuera del Provider, en lugar de lanzar un error. Esto hace que bugs de composición (componente fuera del árbol correcto) "funcionen en inglés" y sean difíciles de detectar.  
@@ -62,6 +56,7 @@ Fuentes: auditoría Claude (config/deps) + auditoría Codex (código fuente)
 
 ## Resuelto (historial)
 
+- ~~[M2] Cast inseguro en traducciones de proyectos~~ — Resuelto: cast reemplazado por `project.id as ProjectDataKey` (derivado de `Translations["projectData"]`); warning en dev si falta un id
 - ~~[A3] Sin rate limiting en el endpoint de contacto~~ — Resuelto: honeypot field (`website`) en `ContactForm.tsx`; el endpoint lo verifica y rechaza silenciosamente si está relleno
 - ~~[A2] Endpoint de contacto sin validación de schema~~ — Resuelto: zod instalado, `contactSchema` con `name` (max 100), `email` (email válido), `message` (max 2000) en `api/contact/route.ts`
 - ~~[A1] Formulario sin labels de accesibilidad~~ — Resuelto: `aria-label` agregado a los tres campos (`name`, `email`, `message`) en `ContactForm.tsx`

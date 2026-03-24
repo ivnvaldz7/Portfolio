@@ -3,6 +3,9 @@
 import Image from "next/image";
 import { Project } from "@/types";
 import { useTranslation } from "@/context/LanguageContext";
+import type { Translations } from "@/i18n";
+
+type ProjectDataKey = keyof Translations["projectData"];
 
 interface ProjectCardProps {
   project: Project;
@@ -18,7 +21,12 @@ const bgColors = [
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const { t } = useTranslation();
-  const projectTranslation = (t.projectData as Record<string, { description: string }>)[project.id];
+
+  if (process.env.NODE_ENV === "development" && !(project.id in t.projectData)) {
+    console.warn(`[i18n] Missing projectData entry for id: "${project.id}"`);
+  }
+
+  const projectTranslation = t.projectData[project.id as ProjectDataKey];
   const description = projectTranslation?.description ?? project.description;
 
   return (
