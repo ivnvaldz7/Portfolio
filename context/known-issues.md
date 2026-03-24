@@ -7,24 +7,6 @@ Fuentes: auditoría Claude (config/deps) + auditoría Codex (código fuente)
 
 ## Prioridad alta
 
-### [A1] Formulario sin labels de accesibilidad
-**Archivo:** `src/components/ContactForm.tsx`  
-**Problema:** Los inputs dependen de `placeholder` en lugar de `<label>` o `aria-label`. Visualmente funciona, pero Lighthouse Accessibility lo penaliza y los lectores de pantalla no pueden asociar el campo con su propósito.  
-**Fix:** Agregar `<label htmlFor="campo">` o `aria-label` a cada input y textarea.  
-**Costo:** Bajo (30 min). **Impacto:** Alto (Lighthouse + percepción de calidad).  
-**Regla:** Al tocar cualquier parte del formulario, corregir esto en el mismo cambio.
-
-### [A2] Endpoint de contacto sin validación de schema
-**Archivo:** `src/app/api/contact/route.ts`  
-**Problema:** `req.json()` no valida tipos, longitud de campos ni presencia de campos requeridos. Un payload malformado puede causar un error 500 no controlado.  
-**Fix:** Agregar validación con `zod`. Schema mínimo: `name` (string, max 100), `email` (email válido), `message` (string, max 2000).  
-**Costo:** Medio (1-2 hs incluye instalar zod). **Impacto:** Alto antes de producción real.
-
-### [A3] Sin rate limiting en el endpoint de contacto
-**Archivo:** `src/app/api/contact/route.ts`  
-**Problema:** Cualquier cliente puede hacer POST ilimitado. En un portfolio público con Resend free tier (3000 emails/mes), un bot puede agotar la cuota.  
-**Fix:** Upstash Rate Limit (serverless, funciona en Netlify Edge) o simplemente honeypot field en el formulario.  
-**Costo:** Medio. **Impacto:** Medio (no urgente para demo, sí para producción).
 
 ---
 
@@ -80,5 +62,8 @@ Fuentes: auditoría Claude (config/deps) + auditoría Codex (código fuente)
 
 ## Resuelto (historial)
 
+- ~~[A3] Sin rate limiting en el endpoint de contacto~~ — Resuelto: honeypot field (`website`) en `ContactForm.tsx`; el endpoint lo verifica y rechaza silenciosamente si está relleno
+- ~~[A2] Endpoint de contacto sin validación de schema~~ — Resuelto: zod instalado, `contactSchema` con `name` (max 100), `email` (email válido), `message` (max 2000) en `api/contact/route.ts`
+- ~~[A1] Formulario sin labels de accesibilidad~~ — Resuelto: `aria-label` agregado a los tres campos (`name`, `email`, `message`) en `ContactForm.tsx`
 - ~~Next.js 16 no existe~~ — Verificado: Next.js 16.x existe y está publicado en npm (verificación Codex, marzo 2026)
 - ~~framer-motion 12.34.0 no existe~~ — Verificado: versión plausible según registro npm actual

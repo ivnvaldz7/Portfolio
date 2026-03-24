@@ -21,6 +21,7 @@ export default function ContactForm() {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       message: formData.get("message") as string,
+      website: formData.get("website") as string,
     };
 
     try {
@@ -62,10 +63,21 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+      {/* Honeypot: oculto para humanos, visible para bots */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        aria-hidden="true"
+        autoComplete="off"
+        className="absolute opacity-0 pointer-events-none h-0 w-0"
+      />
       <div className="grid grid-cols-2 gap-3">
         <input
           type="text"
           name="name"
+          id="contact-name"
+          aria-label={t.contactForm.name}
           placeholder={t.contactForm.name}
           required
           className="border-b border-on-dark-muted bg-transparent px-1 py-3 text-sm text-on-dark placeholder-on-dark-tertiary outline-none transition-colors duration-300 focus:border-accent-coral"
@@ -73,6 +85,8 @@ export default function ContactForm() {
         <input
           type="email"
           name="email"
+          id="contact-email"
+          aria-label={t.contactForm.email}
           placeholder={t.contactForm.email}
           required
           className="border-b border-on-dark-muted bg-transparent px-1 py-3 text-sm text-on-dark placeholder-on-dark-tertiary outline-none transition-colors duration-300 focus:border-accent-coral"
@@ -80,6 +94,8 @@ export default function ContactForm() {
       </div>
       <textarea
         name="message"
+        id="contact-message"
+        aria-label={t.contactForm.message}
         placeholder={t.contactForm.message}
         required
         rows={3}

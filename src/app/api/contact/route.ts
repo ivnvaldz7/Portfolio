@@ -1,11 +1,13 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { z } from "zod";
 
-interface ContactRequest {
-  name: string;
-  email: string;
-  message: string;
-}
+const contactSchema = z.object({
+  name: z.string().min(1, "Name is required").max(100),
+  email: z.string().email("Invalid email address"),
+  message: z.string().min(1, "Message is required").max(2000),
+  website: z.string().optional(),
+});
 
 export async function POST(req: Request) {
   try {
@@ -19,21 +21,19 @@ export async function POST(req: Request) {
 
     const resend = new Resend(apiKey);
 
-    const body: ContactRequest = await req.json();
-    const { name, email, message } = body;
+    const body: unknown = await req.json();
+    const parsed = contactSchema.safeParse(body);
 
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: "All fields are required" },
-        { status: 400 }
-      );
+    if (!parsed.success) {
+      const message = parsed.error.errors[0]?.message ?? "Invalid input";
+      return NextResponse.json({ error: message }, { status: 400 });
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address" },
-        { status: 400 }
-      );
+    const { name, email, message, website } = parsed.data;
+
+    // Honeypot: si el campo oculto tiene valor, es un bot — rechazar silenciosamente
+    if (website) {
+      return NextResponse.json({ success: true });
     }
 
     await resend.emails.send({
