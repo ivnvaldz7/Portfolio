@@ -54,6 +54,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 export function useTranslation(): LanguageContextValue {
   const ctx = useContext(LanguageContext);
   if (!ctx) {
+    if (process.env.NODE_ENV === "development") {
+      throw new Error(
+        "useTranslation() fue llamado fuera de LanguageProvider. " +
+        "Asegurate de que el componente esté dentro del árbol de providers."
+      );
+    }
     return {
       locale: "en",
       t: getTranslations("en"),
