@@ -22,7 +22,10 @@ const bgColors = [
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const { t } = useTranslation();
 
-  if (process.env.NODE_ENV === "development" && !(project.id in t.projectData)) {
+  if (
+    process.env.NODE_ENV === "development" &&
+    !(project.id in t.projectData)
+  ) {
     console.warn(`[i18n] Missing projectData entry for id: "${project.id}"`);
   }
 
@@ -61,7 +64,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           aria-hidden="true"
           width={140}
           height={140}
-          className="w-[80px] opacity-90 transition-transform duration-300 group-hover:scale-110 min-[375px]:w-[120px]"
+          className="w-[80px] opacity-90 transition-transform duration-300 group-hover:scale-110 min-[375px]:w-[120px] brightness-0 invert"
         />
       </div>
 
@@ -84,8 +87,20 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
       {/* Hover arrow indicator */}
       <div className="absolute right-8 bottom-8 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 opacity-0 transition-all duration-300 group-hover:opacity-100 min-[375px]:right-10 min-[375px]:bottom-10 md:right-12 md:bottom-12">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-white">
-          <path d="M3 13L13 3M13 3H5M13 3V11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          className="text-white"
+        >
+          <path
+            d="M3 13L13 3M13 3H5M13 3V11"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         </svg>
       </div>
     </a>

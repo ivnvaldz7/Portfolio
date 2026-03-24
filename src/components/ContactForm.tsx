@@ -62,7 +62,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       {/* Honeypot: oculto para humanos, visible para bots */}
       <input
         type="text"
@@ -98,7 +98,7 @@ export default function ContactForm() {
         aria-label={t.contactForm.message}
         placeholder={t.contactForm.message}
         required
-        rows={3}
+        rows={5}
         className="resize-none border-b border-on-dark-muted bg-transparent px-1 py-3 text-sm text-on-dark placeholder-on-dark-tertiary outline-none transition-colors duration-300 focus:border-accent-coral"
       />
       {status === "error" && (
@@ -107,7 +107,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-2 self-start rounded-full border border-on-dark-muted bg-transparent px-6 py-2.5 text-sm font-medium tracking-wide text-on-dark transition-all duration-300 hover:border-accent-coral hover:text-accent-coral disabled:opacity-50"
+        className="mt-6 self-start rounded-full border border-on-dark-muted bg-transparent px-6 py-2.5 text-sm font-medium tracking-wide text-on-dark transition-all duration-300 hover:border-accent-coral hover:text-accent-coral disabled:opacity-50"
       >
         {status === "loading" ? t.contactForm.sending : t.contactForm.send}
       </button>

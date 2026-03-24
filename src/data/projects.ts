@@ -68,7 +68,7 @@ export const projects: Project[] = [
     description:
       "Full-stack billing and payments platform for clinics. Built with React 19, Node.js, MongoDB, Stripe and JWT authentication.",
     url: "https://clinicpay.netlify.app/",
-    icon: "/icons/tracking-app.png",
+    icon: "/icons/valid.png",
     tags: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind"],
     color: "hsl(217, 91%, 60%)",
     featured: true,

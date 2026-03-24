@@ -1,15 +1,34 @@
 "use client";
 
 import Image from "next/image";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { personalInfo } from "@/data/personal";
 import { useTranslation } from "@/context/LanguageContext";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {
   const { t } = useTranslation();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 870px)");
+    setIsDesktop(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
 
   return (
     <section
+      ref={sectionRef}
       className="relative w-[90%] bg-surface-ocean"
       id="contact"
       style={{ marginTop: "var(--spacing-section)" }}
@@ -55,8 +74,8 @@ export default function Contact() {
           </div>
 
           {/* Contact form */}
-          <div className="mt-16">
-            <h3 className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-on-dark-tertiary">
+          <div className="mt-20">
+            <h3 className="mb-8 text-sm font-medium uppercase tracking-[0.2em] text-on-dark-tertiary">
               {t.contactForm.title}
             </h3>
             <ContactForm />
@@ -64,16 +83,21 @@ export default function Contact() {
         </article>
 
         {/* Right: profile photo */}
-        <figure className="hidden grayscale transition-[filter] duration-500 hover:grayscale-0 min-[870px]:block min-[870px]:w-full">
-          <Image
-            src="/images/Perfil.jpg"
-            alt="Ivan Valdez profile photo"
-            width={600}
-            height={800}
-            sizes="(max-width: 869px) 0px, (max-width: 1280px) 50vw, 640px"
-            className="h-full w-full object-cover"
-            loading="lazy"
-          />
+        <figure className="hidden overflow-hidden grayscale transition-[filter] duration-500 hover:grayscale-0 min-[870px]:block min-[870px]:w-full">
+          <motion.div
+            style={isDesktop ? { y, willChange: "transform" } : undefined}
+            className="h-full w-full"
+          >
+            <Image
+              src="/images/Perfil.jpg"
+              alt="Ivan Valdez profile photo"
+              width={600}
+              height={800}
+              sizes="(max-width: 869px) 0px, (max-width: 1280px) 50vw, 640px"
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </motion.div>
         </figure>
       </div>
     </section>
