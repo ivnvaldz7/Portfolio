@@ -62,6 +62,9 @@
     },
     "github": {
       "description": "Esta es mi cuenta de GitHub, donde suelo subir mis proyectos. ¡Te invito a seguirme!"
+    },
+    "clinicpay": {
+      "description": "Plataforma full-stack de facturación y pagos para clínicas. Construida con React 19, Node.js, MongoDB, Stripe y autenticación JWT."
     }
   },
   "notFound": {

@@ -34,7 +34,7 @@ export const projects: Project[] = [
     icon: "/icons/tracking-app.png",
     tags: ["Next.js", "TypeScript", "Tailwind"],
     color: "hsl(161, 49%, 45%)",
-    featured: false,
+    featured: true,
     year: 2025,
   },
   {
@@ -61,5 +61,17 @@ export const projects: Project[] = [
     featured: false,
     year: 2025,
     backgroundImage: "/images/github.png",
+  },
+  {
+    id: "clinicpay",
+    title: "ClinicPay",
+    description:
+      "Full-stack billing and payments platform for clinics. Built with React 19, Node.js, MongoDB, Stripe and JWT authentication.",
+    url: "https://clinicpay.netlify.app/",
+    icon: "/icons/tracking-app.png",
+    tags: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind"],
+    color: "hsl(217, 91%, 60%)",
+    featured: true,
+    year: 2025,
   },
 ];
