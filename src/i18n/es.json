@@ -11,14 +11,26 @@
   },
   "about": {
     "sectionTitle": "Sobre mí.",
-    "title": "Hola!, Soy Frontend Developer",
+    "title": "¿Por qué deberías contratarme?",
     "description": "Construyo sistemas prácticos que resuelven problemas operativos reales. Enfocado en logística, automatización y aplicaciones web escalables.",
     "moreTitle": "Más sobre mí...",
     "moreDescription": "Comencé mi camino como desarrollador autodidacta, aprendiendo a través de recursos online estructurados y proyectos prácticos. Hoy me enfoco en construir aplicaciones web escalables que resuelven problemas operativos y de negocio."
   },
   "projects": {
     "sectionTitle": "Proyectos.",
-    "intro": "Aquí encontrarás sistemas reales y aplicaciones web construidas para mejorar flujos de trabajo, optimizar procesos y entregar soluciones prácticas."
+    "eyebrow": "Trabajo seleccionado",
+    "intro": "Una capa de trabajo más completa: sistemas orientados a producto, herramientas operativas y experimentos que muestran cómo pienso más allá de la primera pantalla.",
+    "featuredLabel": "Destacado",
+    "quickPreview": "Vista rápida",
+    "previewTitle": "Vista rápida",
+    "closePreview": "Cerrar vista rápida",
+    "viewCaseStudy": "Caso de estudio",
+    "visitDemo": "Demo en vivo",
+    "backToProjects": "Volver a proyectos",
+    "caseStudyLabel": "Desglose del proyecto",
+    "roleLabel": "Rol",
+    "stackLabel": "Stack",
+    "outcomesLabel": "Resultados clave"
   },
   "contact": {
     "sectionTitle": "Hablemos.",
@@ -46,26 +58,6 @@
   "comingSoon": {
     "title": "Próximamente...",
     "description": "Nuevo proyecto en camino. Mantenete atento."
-  },
-  "projectData": {
-    "tasty": {
-      "description": "Este sitio web está diseñado con SASS y HTML de forma responsive y utilizo todo lo aprendido en JS hasta la fecha."
-    },
-    "generactiva": {
-      "description": "Géneractiva fue el primer sitio web en el que trabajé, fue el que más tiempo me llevó porque tiene 3 páginas incluidas."
-    },
-    "alebet-manager": {
-      "description": "Sistema de gestión logística construido con tecnologías modernas para optimizar operaciones y seguimiento."
-    },
-    "pokeapi": {
-      "description": "En este proyecto reutilicé una tarjeta que había hecho en los desafíos de Frontend Mentor para darle interacción con la API de Pokemon."
-    },
-    "github": {
-      "description": "Esta es mi cuenta de GitHub, donde suelo subir mis proyectos. ¡Te invito a seguirme!"
-    },
-    "clinicpay": {
-      "description": "Plataforma full-stack de facturación y pagos para clínicas. Construida con React 19, Node.js, MongoDB, Stripe y autenticación JWT."
-    }
   },
   "notFound": {
     "title": "404",

@@ -1,14 +1,53 @@
+export interface LocalizedText {
+  en: string;
+  es: string;
+}
+
+export interface ProjectTheme {
+  from: string;
+  to: string;
+  glow: string;
+  image?: string;
+}
+
+export interface ProjectLinks {
+  live?: string;
+  repository?: string;
+}
+
+export interface ProjectMetric {
+  label: LocalizedText;
+  value: LocalizedText;
+}
+
+export interface ProjectSection {
+  title: LocalizedText;
+  body: LocalizedText;
+}
+
 export interface Project {
   id: string;
-  title: string;
-  description: string;
-  url: string;
-  icon: string;
-  tags: string[];
-  color: string;
-  featured: boolean;
+  slug: string;
+  title: LocalizedText;
+  subtitle: LocalizedText;
+  summary: LocalizedText;
+  role: LocalizedText;
   year: number;
-  backgroundImage?: string;
+  featured: boolean;
+  status: "live" | "concept";
+  icon: string;
+  stack: string[];
+  theme: ProjectTheme;
+  links: ProjectLinks;
+  previewBullets: LocalizedText[];
+  metrics: ProjectMetric[];
+  sections: {
+    overview: ProjectSection;
+    challenge: ProjectSection;
+    solution: ProjectSection;
+    impact: ProjectSection;
+  };
+  outcomes: LocalizedText[];
 }
 
 export interface Testimonial {

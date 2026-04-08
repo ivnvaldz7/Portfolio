@@ -11,14 +11,26 @@
   },
   "about": {
     "sectionTitle": "About.",
-    "title": "Hi!, I'm Frontend Developer",
+    "title": "Why should you hire me?",
     "description": "I build practical systems that solve real operational problems. Focused on logistics, automation and scalable web applications.",
     "moreTitle": "More about me...",
     "moreDescription": "I started my journey as a self-taught developer, learning through structured online resources and hands-on projects. Today, I focus on building scalable web applications that solve operational and business problems."
   },
   "projects": {
     "sectionTitle": "Projects.",
-    "intro": "Here you'll find real-world systems and web applications built to improve workflows, optimize processes and deliver practical solutions."
+    "eyebrow": "Selected work",
+    "intro": "A more complete layer of work: product-facing systems, operational tools and experiments that show how I think beyond the first screen.",
+    "featuredLabel": "Featured",
+    "quickPreview": "Quick preview",
+    "previewTitle": "Quick preview",
+    "closePreview": "Close preview",
+    "viewCaseStudy": "Case study",
+    "visitDemo": "Live demo",
+    "backToProjects": "Back to projects",
+    "caseStudyLabel": "Project breakdown",
+    "roleLabel": "Role",
+    "stackLabel": "Stack",
+    "outcomesLabel": "Key outcomes"
   },
   "contact": {
     "sectionTitle": "Say hi.",
@@ -46,26 +58,6 @@
   "comingSoon": {
     "title": "Coming\nSoon...",
     "description": "New project on the way. Stay tuned."
-  },
-  "projectData": {
-    "tasty": {
-      "description": "This website is designed with SASS and HTML in a responsive way and I use everything I have learned in JS to date."
-    },
-    "generactiva": {
-      "description": "Géneractiva was the first website I worked on, it was the one that took me the longest because it has 3 pages included."
-    },
-    "alebet-manager": {
-      "description": "Logistics management system built with modern technologies to streamline operations and tracking."
-    },
-    "pokeapi": {
-      "description": "In this project I reused a card that I had made in the Frontend Mentor challenges to give it interaction with the Pokemon API."
-    },
-    "github": {
-      "description": "This is my GitHub account, where I often upload my projects. I invite you to follow me!"
-    },
-    "clinicpay": {
-      "description": "Full-stack billing and payments platform for clinics. Built with React 19, Node.js, MongoDB, Stripe and JWT authentication."
-    }
   },
   "notFound": {
     "title": "404",

@@ -1,36 +1,75 @@
 "use client";
 
+import { useMemo, useState } from "react";
 import { projects } from "@/data/projects";
 import { useTranslation } from "@/context/LanguageContext";
-import ProjectCard from "./ProjectCard";
+import type { Project } from "@/types";
 import ComingSoonCard from "./ComingSoonCard";
 import LoadingGrid from "./LoadingGrid";
+import ProjectCard from "./ProjectCard";
+import ProjectPreviewModal from "./ProjectPreviewModal";
 
 export default function ProjectGrid() {
   const { t } = useTranslation();
-  const isOdd = projects.length % 2 !== 0;
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
+
+  const orderedProjects = useMemo(
+    () => [...projects].sort((a, b) => Number(b.featured) - Number(a.featured)),
+    [],
+  );
+
+  const isOdd = orderedProjects.length % 2 !== 0;
 
   return (
     <section
-      className="relative w-[90%] bg-surface-blush"
       id="projects"
+      className="relative w-[90%] max-w-[1240px]"
       style={{ marginTop: "var(--spacing-section)" }}
     >
-      <h2 className="absolute bottom-full left-0 translate-y-[21%] text-[18vmin] font-light leading-none tracking-tight text-text-primary dark:text-on-dark-muted">
+      <h2 className="absolute bottom-full left-0 z-10 translate-y-[21%] text-[18vmin] font-light leading-none tracking-tight text-text-primary dark:text-on-dark-muted">
         {t.projects.sectionTitle}
       </h2>
-      <article className="flex h-auto min-h-[400px] flex-col items-center justify-center px-8 py-20 text-center min-[375px]:min-h-[500px] min-[375px]:px-12 md:min-h-[600px]">
-        <p className="pb-16 text-xl leading-relaxed text-text-primary min-[375px]:text-2xl md:pb-24 md:text-3xl md:leading-snug">
-          {t.projects.intro}
-        </p>
-        <LoadingGrid />
-      </article>
-      <article className="grid grid-cols-1 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
+
+      <div
+        className="relative overflow-hidden bg-surface-blush px-8 py-20 sm:px-12 sm:py-24"
+        style={{
+          backgroundImage:
+            "linear-gradient(145deg, hsl(13, 53%, 82%), hsl(14, 81%, 96%))",
+        }}
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.62),transparent_34%)]" />
+
+        <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_280px] lg:items-end">
+          <div className="space-y-4">
+            <p className="max-w-[58ch] text-base leading-7 text-text-secondary sm:text-lg sm:leading-8">
+              {t.projects.intro}
+            </p>
+          </div>
+
+          <div className="flex justify-start lg:justify-end">
+            <div className="bg-white/35 px-6 py-5 shadow-[0_18px_60px_-36px_rgba(0,0,0,0.25)] backdrop-blur-sm dark:bg-white/5">
+              <LoadingGrid />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-4 lg:grid-cols-2 lg:gap-6">
+        {orderedProjects.map((project, index) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            index={index}
+            onPreview={setActiveProject}
+          />
         ))}
-        {isOdd && <ComingSoonCard />}
-      </article>
+        {isOdd ? <ComingSoonCard /> : null}
+      </div>
+
+      <ProjectPreviewModal
+        project={activeProject}
+        onClose={() => setActiveProject(null)}
+      />
     </section>
   );
 }
