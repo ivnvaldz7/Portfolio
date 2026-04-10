@@ -17,6 +17,8 @@ Portfolio personal de Ivan Valdez orientado a empleabilidad como Frontend / Full
 - La sección de proyectos ya no depende de links externos como única interacción.
 - Las transiciones fueron reforzadas y ahora hay soporte básico para `prefers-reduced-motion`.
 - La UI de proyectos fue replanteada con una lógica más mobile first.
+- El cambio de idioma ya tiene transición suave aplicada sólo al contenido principal, sin afectar botones fijos.
+- Se ajustó el lenguaje visual para acercar `Projects`, `About` y `Hablemos`, con gradientes más coherentes y medidas más compactas.
 
 ## Stack actual confirmado
 - Next.js 16
@@ -73,6 +75,7 @@ src/
 ## Riesgos actuales
 - La narrativa nueva depende de revisar el contenido real de cada proyecto para no quedarse corta.
 - Falta validación visual manual en navegador real para modal y detail pages.
+- Queda espacio de polish visual fino en jerarquía, ritmo y consistencia entre cards, modal y detail page.
 
 ## Supuestos activos
 - La home actual seguirá existiendo como punto de entrada principal.
@@ -83,3 +86,4 @@ src/
 ## Próximo foco
 - Revisar visualmente la nueva experiencia en navegador real.
 - Ajustar contenido de los case studies prioritarios.
+- Hacer polish visual fino, no cambios arquitectónicos.

@@ -1,7 +1,7 @@
 # TASKS
 
 ## Estado general
-Fase actual: arquitectura de proyectos cerrada, limpia y validada por build.
+Fase actual: arquitectura de proyectos cerrada, limpia y validada por build. Lo pendiente ya no es estructural sino de polish visual/editorial.
 
 ## Roadmap por etapas
 
@@ -50,9 +50,20 @@ Fase actual: arquitectura de proyectos cerrada, limpia y validada por build.
 - [x] Validar CTAs táctiles y estados sin hover
 - [ ] Revisar modal y detail page en navegador real
 
+### Etapa 7 - Polish visual y editorial
+- [x] Reintegrar `Projects` al patrón visual de título flotante del sitio
+- [x] Compactar `About` y `Hablemos` para acercarlos a la escala de `Projects`
+- [x] Eliminar pills/badges genéricas de las cards
+- [x] Centrar y ordenar mejor la composición interna de las cards
+- [x] Limitar la transición de idioma al contenido principal
+- [ ] Revisar visualmente cards, modal y detail page en navegador real
+- [ ] Afinar la narrativa/copy de los proyectos prioritarios
+- [ ] Evaluar un último pase de look-and-feel si hiciera falta
+
 ## Bloqueos actuales
 - No hay bloqueos técnicos de compilación.
 - Falta validación visual manual.
+- No hay deuda arquitectónica urgente abierta.
 
 ## Próximo paso recomendado
 Abrir la nueva experiencia en navegador y revisar:
@@ -60,3 +71,4 @@ Abrir la nueva experiencia en navegador y revisar:
 - rutas dedicadas
 - spacing mobile
 - narrativa de contenido por proyecto
+- consistencia visual general entre secciones
